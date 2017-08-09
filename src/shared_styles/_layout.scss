@@ -1,0 +1,56 @@
+@import "_variables";
+@import "_mixins";
+
+body {
+  background-color: #f2f2f2;
+  font-family: 'Lato';
+  text-align: center;
+}
+
+// breakpoints template - order matters - ** use these in module specific scss files. **
+// http://patorjk.com/software/taag/#p=display&f=Rectangles&t=400%20MAX%0A
+
+//  ___   ___ ___ ___    _____ _____ __ __
+// |_  | |  _|   |   |  |     |  _  |  |  |
+//  _| |_| . | | | | |  | | | |     |-   -|
+// |_____|___|___|___|  |_|_|_|__|__|__|__|
+//
+@include for-desktop-down {
+
+}
+
+//  ___   ___ ___ ___    _____ _____ __ __
+// |_  | |_  |   |   |  |     |  _  |  |  |
+//  _| |_|  _| | | | |  | | | |     |-   -|
+// |_____|___|___|___|  |_|_|_|__|__|__|__|
+//
+@include for-tablet-landscape-down {
+
+}
+
+//  ___ ___ ___    _____ _____ __ __
+// | . |   |   |  |     |  _  |  |  |
+// |_  | | | | |  | | | |     |-   -|
+// |___|___|___|  |_|_|_|__|__|__|__|
+//
+@include for-tablet-portrait-down {
+
+}
+
+//  ___ ___ ___    _____ _____ __ __
+// |  _|   |   |  |     |  _  |  |  |
+// | . | | | | |  | | | |     |-   -|
+// |___|___|___|  |_|_|_|__|__|__|__|
+//
+@include for-phone-only {
+
+}
+
+//  ___ ___ ___    _____ _____ __ __
+// | | |  _|   |  |     |  _  |  |  |
+// |_  |_  | | |  | | | |     |-   -|
+//   |_|___|___|  |_|_|_|__|__|__|__|
+//
+@include for-small-phone-only {
+
+}

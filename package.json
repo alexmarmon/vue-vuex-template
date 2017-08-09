@@ -1,0 +1,94 @@
+{
+  "name": "vue-vuex-template",
+  "version": "1.0.0",
+  "description": "Template with Vue, Vuex, Webpack 3, Airbnb's ESLint, and an Express API",
+  "author": "Alex Marmon",
+  "license": "MIT",
+  "repository": "https://github.com/alexmarmon/vue-vuex-template.git",
+  "scripts": {
+    "dev": "cross-env FRAMEWORK=vue PORT=4000 node node_modules/@lofty/lofty-config/server.js",
+    "lint": "eslint --ext .js --ext .vue src/; exit 0",
+    "lint-fix": "eslint --fix --ext .js --ext .vue src/; exit 0",
+    "build": "webpack --config node_modules/@lofty/lofty-config/vue/webpack.prod.js --progress --colors --optimize-minimize",
+    "test": "cross-env PORT=4000 node_modules/.bin/ava src/tests",
+    "production": "cross-env PORT=4000 node node_modules/@lofty/lofty-config/server.js"
+  },
+  "keywords": [
+    "vue",
+    "vuex",
+    "vue-router",
+    "webpack 3"
+  ],
+  "devDependencies": {
+    "babel-preset-env": "^1.6.0",
+    "babel-register": "^6.24.1",
+    "cross-env": "^5.0.5",
+    "require-extension-hooks-babel": "^0.1.1",
+    "require-extension-hooks-vue": "^0.4.0"
+  },
+  "dependencies": {
+    "@lofty/lofty-config": "^1.0.0",
+    "ava": "^0.21.0",
+    "avoriaz": "^3.2.0",
+    "body-parser": "^1.17.2",
+    "browser-env": "^3.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-vue": "^3.8.0",
+    "express": "^4.15.3",
+    "knex": "^0.12.9",
+    "mysql": "^2.14.0",
+    "pug": "^2.0.0-rc.3",
+    "require-extension-hooks": "^0.3.0",
+    "supertest": "^3.0.0",
+    "vue": "^2.4.2",
+    "vue-loader": "^13.0.2",
+    "vue-router": "^2.7.0",
+    "vue-template-compiler": "^2.4.2",
+    "vuex": "^2.3.1"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-2"
+    ],
+    "plugins": [
+      "transform-class-properties"
+    ]
+  },
+  "ava": {
+    "require": [
+      "babel-register",
+      "./src/tests/helpers/setup.js"
+    ],
+    "babel": "inherit",
+    "verbose": true
+  },
+  "eslintConfig": {
+    "extends": [
+      "airbnb",
+      "plugin:vue/recommended"
+    ],
+    "parser": "vue-eslint-parser",
+    "globals": {
+      "document": true,
+      "fetch": true,
+      "console": true,
+      "it": true,
+      "describe": true,
+      "window": true
+    },
+    "rules": {
+      "no-console": 0,
+      "window": 0,
+      "radix": 0,
+      "forbid-prop-types": 0,
+      "no-nested-ternary": 0,
+      "max-len": 0,
+      "import/first": 0,
+      "no-named-as-default": 0,
+      "no-shadow": 0,
+      "no-param-reassign": 0,
+      "vue/no-invalid-template-root": 0
+    }
+  }
+}

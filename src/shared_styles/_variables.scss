@@ -1,0 +1,22 @@
+// Colors
+$white:           #ffffff;
+$gray90:          #e5e5e5;
+$gray80:          #cccccc;
+$gray70:          #b2b2b2;
+$gray60:          #999999;
+$gray50:          #7f7f7f;
+$gray40:          #666666;
+$gray30:          #4c4c4c;
+$gray20:          #333333;
+$gray10:          #191919;
+$black:           #000000;
+$brandPrimary:    #000000;
+$brandLight:      lighten($brandPrimary, 10%);
+$brandDark:       darken($brandPrimary, 10%);
+
+// Layout
+$grid-small-phone-only:          450px;
+$grid-phone-only:                600px;
+$grid-tablet-portrait-down:      900px;
+$grid-tablet-landscape-down:    1200px;
+$grid-desktop-down:             1600px;

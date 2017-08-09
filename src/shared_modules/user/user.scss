@@ -1,0 +1,12 @@
+@import "../../shared_styles/_variables";
+@import "../../shared_styles/_mixins";
+
+.user-module {
+  button {
+    width: 100px;
+    height: 30px;
+    border-radius: 15px;
+    border: none;
+    margin-top: 50px;
+  }
+}

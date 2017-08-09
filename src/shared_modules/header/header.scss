@@ -1,0 +1,11 @@
+@import "../../shared_styles/_variables";
+@import "../../shared_styles/_mixins";
+
+.header-module {
+  margin: 50px 0;
+
+  a {
+    color: $gray20;
+    margin: 0px 50px;
+  }
+}

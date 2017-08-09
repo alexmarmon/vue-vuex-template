@@ -1,0 +1,47 @@
+@import "_variables";
+
+// breakpoints
+@mixin for-small-phone-only {
+  @media (max-width: $grid-small-phone-only) { @content; }
+}
+@mixin for-phone-only {
+  @media (max-width: $grid-phone-only) { @content; }
+}
+@mixin for-tablet-portrait-down {
+  @media (max-width: $grid-tablet-portrait-down) { @content; }
+}
+@mixin for-tablet-landscape-down {
+  @media (max-width: $grid-tablet-landscape-down) { @content; }
+}
+@mixin for-desktop-down {
+  @media (max-width: $grid-desktop-down) { @content; }
+}
+
+
+// font-face
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+	$src: null;
+
+	$extmods: (
+		eot: "?",
+		svg: "#" + str-replace($name, " ", "_")
+	);
+
+	$formats: (
+		otf: "opentype",
+		ttf: "truetype"
+	);
+
+	@each $ext in $exts {
+		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+		$src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+	}
+
+	@font-face {
+		font-family: quote($name);
+		font-style: $style;
+		font-weight: $weight;
+		src: $src;
+	}
+}
