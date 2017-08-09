@@ -14,10 +14,10 @@ An application that combines:
 ```
 vim creds.json
 {
-	"host": "localhost",
-	"user": "mysql user",
-	"password": "mysql password",
-	"database": "template"
+  "host": "localhost",
+  "user": "mysql user",
+  "password": "mysql password",
+  "database": "template"
 }
 
 // in mysql
