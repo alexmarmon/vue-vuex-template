@@ -9,6 +9,7 @@ An application that combines:
 * [Webpack 3](https://github.com/webpack/webpack.js.org) Version: ^3.0.0
 * [Airbnb's ESLint](https://github.com/airbnb/javascript) Version: ^15.0.1
 * [Express](https://expressjs.com/) Version: ^4.15.2
+* [Lofty Config](https://github.com/alexmarmon/lofty-config) Version: ^1.0.0
 
 ### Getting Started
 ```
