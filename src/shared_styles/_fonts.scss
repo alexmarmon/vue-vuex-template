@@ -2,8 +2,8 @@
 
 // use google fonts whenever possible
 // example: @include font-face(name, path, weight, style, filenames);
-// @include font-face("Lato", fonts/Lato/Lato-Regular, null, null, ttf);
-// @include font-face("Karla", fonts/Karla/Karla-Regular, null, null, ttf);
+// @include font-face("Lato", Lato/Lato-Regular, null, null, ttf);
+// @include font-face("Karla", Karla/Karla-Regular, null, null, ttf);
 
 html {
   -webkit-font-smoothing: antialiased;
@@ -11,7 +11,7 @@ html {
 }
 
 h1, h2, h3, p {
-  color: $brandDark;
+  color: $brand-dark;
 }
 
 h1 {

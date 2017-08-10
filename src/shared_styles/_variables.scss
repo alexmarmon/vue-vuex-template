@@ -10,9 +10,9 @@ $gray30:          #4c4c4c;
 $gray20:          #333333;
 $gray10:          #191919;
 $black:           #000000;
-$brandPrimary:    #000000;
-$brandLight:      lighten($brandPrimary, 10%);
-$brandDark:       darken($brandPrimary, 10%);
+$brand-primary:   #000000;
+$brand-light:     lighten($brand-primary, 10%);
+$brand-dark:      darken($brand-primary, 10%);
 
 // Layout
 $grid-small-phone-only:          450px;
