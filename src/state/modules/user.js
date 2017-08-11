@@ -21,9 +21,9 @@ const mutations = {
 const actions = {
   getUser({ commit }) {
     fetch('/api/users').then(response => response.json())
-    .then((response) => {
-      commit('changeUser', { first_name: response.first_name, last_name: response.last_name, phone: response.phone });
-    });
+      .then((response) => {
+        commit('changeUser', { first_name: response.first_name, last_name: response.last_name, phone: response.phone });
+      });
   },
 };
 

@@ -2,7 +2,7 @@ import { mount } from 'avoriaz';
 import test from 'ava';
 import request from 'supertest';
 
-import server from '@lofty/lofty-config/server';
+import server from '@lofty/lofty-config/vue/prod-server';
 import store from '../state';
 import User from '../shared_modules/user/user.vue';
 

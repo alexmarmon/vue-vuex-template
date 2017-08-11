@@ -6,12 +6,12 @@
   "license": "MIT",
   "repository": "https://github.com/alexmarmon/vue-vuex-template.git",
   "scripts": {
-    "dev": "cross-env FRAMEWORK=vue PORT=4000 node node_modules/@lofty/lofty-config/server.js",
+    "dev": "cross-env PORT=4000 node node_modules/@lofty/lofty-config/vue/dev-server.js",
     "lint": "eslint --ext .js --ext .vue src/; exit 0",
     "lint-fix": "eslint --fix --ext .js --ext .vue src/; exit 0",
-    "build": "webpack --config node_modules/@lofty/lofty-config/vue/webpack.prod.js --progress --colors --optimize-minimize",
+    "build": "cross-env PORT=4000 webpack --config node_modules/@lofty/lofty-config/vue/webpack.prod.js --progress --colors --optimize-minimize",
     "test": "cross-env PORT=4000 node_modules/.bin/ava src/tests",
-    "production": "cross-env PORT=4000 node node_modules/@lofty/lofty-config/server.js"
+    "production": "cross-env PORT=4000 node node_modules/@lofty/lofty-config/vue/prod-server.js"
   },
   "keywords": [
     "vue",
@@ -20,36 +20,51 @@
     "webpack 3"
   ],
   "dependencies": {
-    "babel-preset-env": "^1.6.0",
-    "babel-register": "^6.24.1",
-    "cross-env": "^5.0.5",
-    "require-extension-hooks-babel": "^0.1.1",
-    "require-extension-hooks-vue": "^0.4.0",
-    "@lofty/lofty-config": "^1.0.6",
+    "@lofty/lofty-config": "^1.1.2",
     "ava": "^0.21.0",
     "avoriaz": "^3.2.0",
+    "babel-core": "^6.25.0",
+    "babel-eslint": "^7.2.3",
     "babel-loader": "^7.1.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.24.1",
     "body-parser": "^1.17.2",
-    "browser-env": "^3.1.0",
+    "browser-env": "^3.1.2",
+    "connect-history-api-fallback": "^1.3.0",
+    "copy-webpack-plugin": "^4.0.1",
+    "cross-env": "^5.0.5",
     "css-loader": "^0.28.4",
+    "eslint": "^4.4.1",
+    "eslint-config-airbnb-base": "^11.3.1",
+    "eslint-import-resolver-webpack": "^0.8.3",
     "eslint-loader": "^1.9.0",
+    "eslint-plugin-html": "^3.1.1",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-vue": "^3.8.0",
     "express": "^4.15.4",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^2.30.1",
+    "http-proxy-middleware": "^0.17.4",
     "knex": "^0.13.0",
     "mysql": "^2.14.1",
     "node-sass": "^4.5.3",
     "pug": "^2.0.0-rc.3",
     "require-extension-hooks": "^0.3.0",
+    "require-extension-hooks-babel": "^0.1.1",
+    "require-extension-hooks-vue": "^0.4.0",
     "sass-loader": "^6.0.6",
     "supertest": "^3.0.0",
     "vue": "^2.4.2",
     "vue-loader": "^13.0.4",
     "vue-router": "^2.7.0",
     "vue-template-compiler": "^2.4.2",
-    "vuex": "^2.3.1"
+    "vuex": "^2.3.1",
+    "webpack": "^3.5.3",
+    "webpack-dev-middleware": "^1.12.0",
+    "webpack-hot-middleware": "^2.18.2",
+    "webpack-merge": "^4.1.0"
   },
   "babel": {
     "presets": [
@@ -57,7 +72,7 @@
       "stage-2"
     ],
     "plugins": [
-      "transform-class-properties"
+      "transform-runtime"
     ]
   },
   "ava": {
@@ -70,10 +85,13 @@
   },
   "eslintConfig": {
     "extends": [
-      "airbnb",
-      "plugin:vue/recommended"
+      "airbnb-base"
     ],
-    "parser": "vue-eslint-parser",
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "sourceType": "module",
+      "parser": "babel-eslint"
+    },
     "globals": {
       "document": true,
       "fetch": true,
@@ -84,16 +102,13 @@
     },
     "rules": {
       "no-console": 0,
-      "window": 0,
-      "radix": 0,
-      "forbid-prop-types": 0,
-      "no-nested-ternary": 0,
-      "max-len": 0,
-      "import/first": 0,
-      "no-named-as-default": 0,
-      "no-shadow": 0,
       "no-param-reassign": 0,
-      "vue/no-invalid-template-root": 0
-    }
+      "no-shadow": 0,
+      "window": 0,
+      "vue/valid-template-root": 0
+    },
+    "plugins": [
+      "html"
+    ]
   }
 }

@@ -11,4 +11,4 @@ new Vue({ // eslint-disable-line no-new
   router,
   store,
   render: h => h(App),
-}).$mount('#root');
+}).$mount('#app');
