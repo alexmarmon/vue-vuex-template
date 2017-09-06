@@ -6,8 +6,8 @@
 
 
 <script>
+import User from 'shared_modules/user/user.vue';
 import Title from './modules/title/title.vue';
-import User from '../../shared_modules/user/user.vue';
 
 export default {
   components: {

@@ -7,8 +7,8 @@
 
 
 <script>
+import User from 'shared_modules/user/user.vue';
 import Text from './modules/text/text.vue';
-import User from '../../shared_modules/user/user.vue';
 
 export default {
   components: {
